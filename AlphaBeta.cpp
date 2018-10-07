@@ -4,7 +4,6 @@
 #include<stdlib.h>
 using namespace std;
 
-const int manpreet=1;
 //structure to define a move
 struct Move
 {
