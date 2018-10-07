@@ -38,6 +38,45 @@ void display_board(char board[3][3])                      //Displays the current
     cout<<"\n";
 }
 
+//Checking if the PC or the Opponent has won
+int possible_win(char player,char b[3][3])
+{
+    // checking rows for a win
+	for (int row = 0; row<3; row++)
+    {
+        if (b[row][0]==b[row][1] &&
+            b[row][1]==b[row][2])
+        {
+            if (b[row][0]==player)
+                return 1;
+        }
+    }
+    // checking  columns for a win
+    for (int col = 0; col<3; col++)
+    {
+        if (b[0][col]==b[1][col] &&
+            b[1][col]==b[2][col])
+        {
+            if (b[0][col]==player)
+                return 1;
+        }
+    }
+    // checking diagonals for a win
+    if (b[0][0]==b[1][1] && b[1][1]==b[2][2])
+    {
+        if (b[0][0]==player)
+            return 1;
+    }
+
+    if (b[0][2]==b[1][1] && b[1][1]==b[2][0])
+    {
+        if (b[0][2]==player)
+            return 1;
+    }
+
+    //if neither wins..
+    return 0;
+}
 
 //Evaluation function
 int evaluate(char b[3][3])
@@ -260,7 +299,16 @@ int main()
                     exit(0);
                 }
                 }
-
+				if (possible_win(pc,board)==1)
+                    {
+                        cout<<"The PC Won!!!!"<<endl;
+                        exit(0);
+                    }
+            if (possible_win(opponent,board)==1)
+                    {
+                        cout<<"The Player Defeated the PC!!!!"<<endl;
+                        exit(0);
+                    }
             t++;
 
         }
@@ -300,7 +348,16 @@ int main()
                 exit(0);
             }
 		}
-
+		if (possible_win(pc,board)==1)
+                {
+                    cout<<"The PC Won!!!!"<<endl;
+                    exit(0);
+                }
+        if (possible_win(opponent,board)==1)
+                {
+                    cout<<"The Player Defeated the PC!!!!"<<endl;
+                    exit(0);
+                }
 		t++;
 	}
 	}
