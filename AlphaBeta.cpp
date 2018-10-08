@@ -15,6 +15,7 @@ char pc = 'X', opponent = 'O';
 
 
 //returns true/false depending upon the moves left on the board
+//bool returns true or false
 bool isMovesLeft(char board[3][3])
 {
     for (int i = 0; i<3; i++)
