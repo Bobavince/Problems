@@ -5,6 +5,7 @@
 using namespace std;
 
 //structure to define a move
+//i.e. row and column
 struct Move
 {
     int row, col;
