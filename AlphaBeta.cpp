@@ -27,6 +27,7 @@ void display_board(char board[3][3])                      //Displays the current
 {
     cout<<"Hellloooo"<<endl;
 	cout<<"just faaltu code"<<endl;
+	cout<<"Another faaltu line of print"<<endl;
     cout<<"\n";
 	for(int i=0;i<3;i++)
 		{
