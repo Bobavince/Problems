@@ -24,7 +24,7 @@ bool isMovesLeft(char board[3][3])
                 return true;
     return false;
 }
-
+//display function
 void display_board(char board[3][3])                      //Displays the current contents of the board
 {
     cout<<"Hellloooo"<<endl;
